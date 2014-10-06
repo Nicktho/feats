@@ -1,0 +1,200 @@
+
+.dashboard-top li:hover {
+	background: #3FC0FF;
+}
+
+/* LAYOUT */
+
+.sidebar-dashboard {
+	vertical-align: top;
+	display: inline-block;
+	width: 25%;
+	height: 100vh;
+	margin: 0;
+	background: #1B272E;
+}
+
+.main-dashboard {
+	vertical-align: top;
+	display: inline-block;
+	width: 75%;
+	background: #EEEEEE;
+	margin: 0;
+	height: 100vh;
+}
+
+aside {
+	margin: 0;
+}
+
+/* SIDEBAR */
+
+/* PROFILE */
+
+.sidebar-profile {
+	background: #3FC0FF;
+	height: 380px;
+	width: 100%;
+	text-align: center;
+	color: white;
+}
+
+.profile-picture {
+	position: relative;
+	width: 170px;
+	height: 170px;
+	background: grey;
+	border-radius: 50%;
+	border: 7px solid white;
+	margin: auto;
+	top: 10%;
+}
+
+.profile-stat {
+	position: relative;
+	display: inline-block;
+	width: 30%;
+	height: 130px;
+	top: 40px;
+	text-align: center;
+	margin: auto;
+	line-height: 1px;
+}
+
+.stat-number{
+	font-size: 200%;
+	font-weight: bold;
+
+}
+
+.xp-bar-outer {
+	width: 80%;
+	position: relative;
+	margin: auto;
+	border: 2px solid white;
+	border-radius: 0%;
+	height: 20px;
+}
+
+.xp-bar-inner {
+	position: relative;
+	width: 30%;
+	height: 100%;
+	background: white;
+	border-radius: 0%;
+}
+
+.level {
+	font-weight: ;
+}
+/* MAINBOX */
+
+.main-dashboard {
+	padding: 2em;
+	color: #848484;
+}
+
+
+
+/* Feats summary */
+
+#feats-number {
+	font-size: 5em;
+}
+
+#total-number-of-feats {
+	font-size: 2.5em;
+	color: #3FC0FF;
+}
+
+/* BADGES */
+
+.badges {
+	display: inline-block;
+	width: 75%;
+}
+
+/* ADD FEAT BUTTON */
+
+.add-feat-button {
+	display: inline-block;
+	text-align: right;
+	position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+	text-align:center; /* center horizontally */
+  vertical-align:middle; /* center vertically */
+}
+
+/* BOTTOM HALF */
+
+/* Scrollbox */
+
+.feats-scrollbox {
+	position: relative;
+	width: 100%;
+	background: white;
+	height: 350px;
+	margin-top: 1em;
+	padding: 2em 1em;
+}
+
+.feats-scrollbox-content {
+	height: 100%;
+	overflow: auto;
+}
+
+.feats-list {
+	list-style: none;
+}
+
+.feats-list-item {
+	padding: 1em 0;
+	font-size: 2em;
+	width: 100%;
+}
+
+.feats-due-time {
+	float: right;
+	margin-right: 1em;
+}
+
+.tick {
+	margin: auto;
+	margin-right: 1em;
+	display: inline-block;
+}
+
+a.svg:after {
+	content: ""; 
+  position: absolute; 
+  top: 0; 
+  right: 0; 
+  bottom: 0; 
+  left: 0;
+}
+
+a.svg {
+  position: relative;
+  display: inline-block;
+}
+
+.ago {
+	color: red;
+}
+
+
+/* FORMS */
+
+/* NEW FEAT FORM */
+
+.new_feat {
+	margin: auto;
+
+}
+
+/* ERRORS */
+
+.error_msgs {
+	color: white;
+}

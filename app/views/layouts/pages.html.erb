@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feats</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<nav class="top-nav">
+		<span id="top-nav-logo"><%= link_to 'feats', root_path %></span>
+		<ul class="top-nav-ul">
+			<li class="top-nav-item"><%= link_to 'Home', root_path %></li>
+			<% unless @current_user %>
+				<li class="top-nav-item"><%= link_to 'Login', login_path %></li>
+			<% end %>
+			<% if @current_user %>
+			<li class="top-nav-item"><%= link_to 'Dashboard', feats_path %></li>
+			<li class="top-nav-item"><%= link_to 'Logout', login_path, :method => :delete, :data => {:confirm => "Are you sure?"} %></li>
+			<% end %>
+		</ul>
+	</nav>
+	<main>
+		<%= yield %>
+	</main>
+	<footer>
+		&copy; Nicholas Matenaar | 2014 | WDI PROJECT 1 | Australia
+	</footer>
+</body>
+</html>

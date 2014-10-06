@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feats</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<nav class="top-nav">
+		<span id="top-nav-logo"><%= link_to 'feats', root_path %></span>
+		<ul class="top-nav-ul dashboard-top">
+			<li class="top-nav-item dashboard-top"><%= link_to 'Home', root_path %></li>
+			<% unless @current_user %>
+				<li class="top-nav-item"><%= link_to 'Login', login_path %></li>
+			<% end %>
+			<% if @current_user %>
+			<li class="top-nav-item"><%= link_to 'Dashboard', feats_path %></li>
+			<li class="top-nav-item"><%= link_to 'Logout', login_path, :method => :delete, :data => {:confirm => "Are you sure?"} %></li>
+			<% end %>
+		</ul>
+	</nav>
+	<div class="sidebar-dashboard">
+		<div class="sidebar-profile">
+			<div class="profile-picture"></div>
+			<div class="profile-stat">
+				<p class="stat-number"><%= @current_user.feats.where(completed: false).count %></p>
+				<p>feats</p>
+			</div>
+			<div class="profile-stat">
+				<p class="stat-number"><%= @current_user.feats.where(completed: true).count %></p>
+				<p>completed</p>
+			</div>
+			<div class="profile-stat">
+				<p class="stat-number"><%= @current_user.badges.count %></p>
+				<p>badges</p>
+			</div>
+			<div class="xp-bar">
+				<div class="xp-bar-outer">
+					<div class="xp-bar-inner"></div>
+				</div>
+			</div>
+			<div class="level">
+				<p>LVL <%= @current_user.level %></p>
+			</div>
+		</div>
+		<div class="sidebar-menu">
+
+	
+		</div>
+	</div><!-- 
+	--><main class="main-dashboard">
+		<%= yield %>
+	</main>
+	<footer>
+		&copy; Nicholas Matenaar | 2014 | WDI PROJECT 1 | Australia
+	</footer>
+</body>
+</html>

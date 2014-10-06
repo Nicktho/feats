@@ -1,0 +1,22 @@
+<h1>Add a feat</h1>
+
+<%= form_for @feat do |f| %>
+	<div class="input-group">
+		<%= f.label :description %>
+		<%= f.text_field :description %>
+	</div>
+	<div class="input-group">
+		<%= f.label :deadline %>
+		<%= f.date_field :deadline %>
+	</div>
+	<div class="input-group">
+		<%= f.submit %>
+	</div>
+	<% if @feat.errors.any? %>
+		<ul class="error_msgs">
+			<% @feat.errors.full_messages.each do |e| %>
+				<li><%= e %></li>
+			<% end %>
+		</ul>
+	<% end %>
+<% end %>
