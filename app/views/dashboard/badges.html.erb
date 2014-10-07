@@ -1,8 +1,9 @@
-<h1>Your Badges</h1>
-<table>
+<h1 class="badges-page">Your Badges</h1>
+<h2 class="badges-page">There's currently <span class="total-badges"><%= @totalbadges %></span> badges in out system. You have <span class="total-badges"><%= @current_user.badges.count %></span>.</h2>
+<table class="badges-table">
 	<tr>
+		<th>Name</th>
 		<th>Badge</th>
-		<th>Image</th>
 		<th>Description</th>
 	</tr>
 	<% @badges.each do |b| %>

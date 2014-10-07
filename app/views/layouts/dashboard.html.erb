@@ -70,8 +70,12 @@
 					<% end %>
 					<%= link_to 'COMPLETED', show_completed_feats_path %>
 				</li>
-				<li class="sidebar-menu-item">
-					<%= image_tag 'badges-logo.svg', class: 'sidebar-logo' %>
+				<li class="sidebar-menu-item  <%= 'sidebar-selected' if current_page?(:controller => 'dashboard', :action => 'badges') %>">
+					<% if current_page?(:controller => 'dashboard', :action => 'badges') %>
+						<%= image_tag 'badges-logo-selected.svg', class: 'sidebar-logo' %>
+					<% else %>
+						<%= image_tag 'badges-logo.svg', class: 'sidebar-logo' %>
+					<% end  %>
 					<%= link_to 'BADGES', dashboard_badges_path %>
 				</li>
 				<li class="sidebar-menu-item">

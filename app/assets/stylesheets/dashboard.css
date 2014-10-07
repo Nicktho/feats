@@ -170,6 +170,11 @@ aside {
 	width: 75%;
 }
 
+.badge-icon {
+	display: inline-block;
+	margin-right: .5em;
+}
+
 /* ADD FEAT BUTTON */
 
 .add-feat-button {

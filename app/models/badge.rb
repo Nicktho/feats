@@ -16,13 +16,18 @@ class Badge < ActiveRecord::Base
 
 	def conditions_met?(user)
 		user_value = user.send(self.condition_variable)
+		con_val = self.condition_value
+		if user_value.is_a? Integer 
+			con_val = con_val.to_i
+
+		end 
 		case self.condition_operator
 		when '='
-			user_value.to_i == self.condition_value.to_i
+			user_value == con_val
 		when '>'
-			user_value.to_i > self.condition_value.to_i
+			user_value > con_val
 		when '<'
-			user_value.to_i < self.condition_value.to_i
+			user_value < con_val
 		end 
 	end 
 	

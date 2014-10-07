@@ -3,5 +3,6 @@ class DashboardController < ApplicationController
 
 	def badges
 		@badges = @current_user.badges
+		@totalbadges = Badge.all.count
 	end 
 end
