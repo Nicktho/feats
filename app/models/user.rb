@@ -22,4 +22,13 @@ class User < ActiveRecord::Base
 
 	validates :username, presence: true, uniqueness: true, length: {minimum: 3}
 	validates :email, presence:true
+
+	def xp_to_percent 
+		xp_until_next_level = (self.level + 1) * 100 # Each level costs 100xp
+  	xp_as_percent = (100 - (xp_until_next_level - self.xp)).to_s + "%" # get the percent
+	end 
+
+	def update_level 
+		self.level = self.xp / 100
+	end 
 end 

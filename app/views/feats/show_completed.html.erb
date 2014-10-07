@@ -1,0 +1,41 @@
+<div class="dashboard-top-view">
+	<div class="total-feats">
+		<h1 id="feats-number">
+			<span id="total-number-of-feats"><%= @completed_feats.count %></span> feats
+		</h1>
+	</div>
+	<div class="badges">
+		<div class="badge-icon">
+				<img src="/assets/BADGE.svg" alt="">
+				<img src="/assets/BADGE-UNKNOWN.svg" alt="">
+				<img src="/assets/BADGE-UNKNOWN.svg" alt="">
+				<img src="/assets/BADGE-UNKNOWN.svg" alt="">
+				<img src="/assets/BADGE-UNKNOWN.svg" alt="">
+				<img src="/assets/BADGE-UNKNOWN.svg" alt="">
+				<img src="/assets/BADGE-UNKNOWN.svg" alt="">
+				<img src="/assets/BADGE-UNKNOWN.svg" alt="">
+				<img src="/assets/BADGE-UNKNOWN.svg" alt="">
+				<img src="/assets/BADGE-UNKNOWN.svg" alt="">
+		</div>
+
+	</div>
+	<div class="add-feat-button">
+		<%= button_to '- CLEAR ALL', clear_feats_path, method: :get %>
+	</div>
+</div>
+<div class="dashboard-bottom-view">
+	<div class="feats-scrollbox">
+		<div class="feats-scrollbox-content">
+			<ul class="feats-list">
+				<% @completed_feats.each do |f| %>
+					<li class="feats-list-item">
+						<%= link_to(complete_feat_path(f), class: "svg") do  %>
+							<object class="tick" type="image/svg+xml" data="/assets/tick.svg"></object>
+						<% end %>
+						<%= f.description %> <span class="feats-due-time <%= "ago" if f.deadline && f.deadline < Time.now  %> "><%= time_ago_in_words f.deadline if f.deadline %> <%= "ago" if f.deadline && f.deadline < Time.now  %></span></li>
+				<% end %>
+
+			</ul>
+		</div>
+	</div>
+</div>

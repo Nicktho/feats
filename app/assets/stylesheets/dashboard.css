@@ -3,15 +3,20 @@
 	background: #3FC0FF;
 }
 
+html,body {
+	height: 100%;
+}
+
 /* LAYOUT */
 
 .sidebar-dashboard {
 	vertical-align: top;
 	display: inline-block;
 	width: 25%;
-	height: 100vh;
+	height: 100%;
 	margin: 0;
 	background: #1B272E;
+	padding: 0;
 }
 
 .main-dashboard {
@@ -78,7 +83,6 @@ aside {
 
 .xp-bar-inner {
 	position: relative;
-	width: 30%;
 	height: 100%;
 	background: white;
 	border-radius: 0%;
@@ -87,6 +91,46 @@ aside {
 .level {
 	font-weight: ;
 }
+
+/* SIDE-BAR MENU */
+
+.sidebar-menu {
+	padding: 0;
+}
+
+.sidebar-menu-ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	width: 100%;
+
+}
+
+.sidebar-menu-item {
+	width: 100%;
+	padding: 1em;
+	text-align: right;
+}
+
+.sidebar-menu-item a {
+	text-decoration: none;
+	color: #EEE;
+	font-weight: bold;
+}
+
+.sidebar-selected {
+	background: #EEE;
+}
+
+.sidebar-selected a {
+	color: #1B272E;
+}
+
+.sidebar-settings {
+	position: relative;
+	vertical-align: bottom;
+}
+
 /* MAINBOX */
 
 .main-dashboard {

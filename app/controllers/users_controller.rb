@@ -7,6 +7,8 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new user_params
+		@user.xp = 0
+		@user.level = 1
 		if @user.save
 			redirect_to root_path
 		else 

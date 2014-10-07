@@ -22,7 +22,9 @@
 	</nav>
 	<div class="sidebar-dashboard">
 		<div class="sidebar-profile">
-			<div class="profile-picture"></div>
+			<div class="profile-picture">
+				
+			</div>
 			<div class="profile-stat">
 				<p class="stat-number"><%= @current_user.feats.where(completed: false).count %></p>
 				<p>feats</p>
@@ -37,7 +39,9 @@
 			</div>
 			<div class="xp-bar">
 				<div class="xp-bar-outer">
-					<div class="xp-bar-inner"></div>
+					<div class="xp-bar-inner" style="
+						width: <%= @current_user.xp_to_percent %>;
+					"></div>
 				</div>
 			</div>
 			<div class="level">
@@ -45,8 +49,25 @@
 			</div>
 		</div>
 		<div class="sidebar-menu">
-
-	
+			<ul class="sidebar-menu-ul">
+				<li class="sidebar-menu-item sidebar-selected">
+					<%= link_to 'DASHBOARD', feats_path %>
+				</li>
+				<li class="sidebar-menu-item">
+					<%= link_to 'PROFILE', feats_path %>
+				</li>
+				<li class="sidebar-menu-item">
+					<%= link_to 'COMPLETED', show_completed_feats_path %>
+				</li>
+				<li class="sidebar-menu-item">
+					<%= link_to 'BADGES', feats_path %>
+				</li>
+				<li class="sidebar-menu-item"></li>
+				<li class="sidebar-menu-item"></li>
+				<li class="sidebar-menu-item sidebar-settings">
+					<%= link_to 'SETTINGS', feats_path %>
+				</li>
+			</ul>
 		</div>
 	</div><!-- 
 	--><main class="main-dashboard">
