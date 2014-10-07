@@ -1,7 +1,7 @@
 class FeatsController < ApplicationController 
 	layout 'dashboard'
 
-	before_action :check_level
+	before_action :check_level, :check_badges
 
 	def index 
 		redirect_to root_path unless @current_user
@@ -50,6 +50,15 @@ class FeatsController < ApplicationController
 
 	def check_level
 		@current_user.update_level 	if logged_in?
+	end 
+
+	def check_badges
+		all_badges = Badge.all 
+		all_badges.each do |b|
+			unless @current_user.badges.include? b
+				@current_user.badges << b if b.conditions_met?(@current_user) 
+			end 
+		end 
 	end 
 
 end 

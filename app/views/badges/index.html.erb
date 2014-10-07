@@ -1,0 +1,12 @@
+<ul class="badges-admin">
+	<% @badges.each do |b| %>
+		<li class="badge-item-admin">
+			<p><%= b.name %></p>
+			<p><%= image_tag b.image %></p>
+			<p><%= b.condition_variable %><%= b.condition_operator %> <%= b.condition_value %></p>
+			<%= link_to 'DELETE', b, method: :delete %>
+		</li>
+	<% end %>	
+</ul>
+
+	

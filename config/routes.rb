@@ -43,11 +43,15 @@ Rails.application.routes.draw do
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
 
+  get '/dashboard/badges' => 'dashboard#badges', as: 'dashboard_badges'
+
   get '/feats/complete/:id' => 'feats#complete', as: 'complete_feat'
   get '/feats/completed' => 'feats#show_completed', as: 'show_completed_feats'
   get '/feats/completed/clear' => 'feats#clear_feats', as: "clear_feats"
 
   get '/admin' => 'admins#index', as: 'admins'
+
+
 
   resources :users
   resources :feats

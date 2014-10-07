@@ -1,0 +1,15 @@
+<h1>Your Badges</h1>
+<table>
+	<tr>
+		<th>Badge</th>
+		<th>Image</th>
+		<th>Description</th>
+	</tr>
+	<% @badges.each do |b| %>
+		<tr>
+			<td><%= b.name %></td>
+			<td><%= image_tag b.image %></td>
+			<td><%= b.description %></td>
+		</tr>
+	<% end %>
+</table>

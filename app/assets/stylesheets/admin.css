@@ -2,3 +2,22 @@
 	background: white;
 	color: black;
 }
+
+.badge-item-admin {
+	display: inline-block;
+	text-align: center;
+	padding: 1em;
+	background: black;
+	margin: 1em;
+}
+
+.badge-item-admin a {
+	text-decoration: none;
+	color: white;
+}
+
+.badges-admin {
+	background: white;
+	margin: 1em;
+	
+}

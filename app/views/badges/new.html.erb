@@ -5,11 +5,23 @@
 	</div>
 	<div class="input-group">
 		<%= f.label :description %>
-		<%= f.date_field :description %>
+		<%= f.text_field :description %>
 	</div>
 	<div class="input-group">
-		<%= f.label :description %>
-		<%= f.date_field :description %>
+		<%= f.label :image %>
+		<%= f.url_field :image %>
+	</div>
+	<div class="input-group">
+		<%= f.label :condition_variable %>
+		<%= f.select :condition_variable, @user_vars%>
+	</div>
+	<div class="input-group">
+		<%= f.label :condition_operator %>
+		<%= f.select :condition_operator, @operators %>
+	</div>
+		<div class="input-group">
+		<%= f.label :condition_operator %>
+		<%= f.text_field :condition_value %>
 	</div>
 	<div class="input-group">
 		<%= f.submit %>
