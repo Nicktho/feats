@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141006024615) do
+ActiveRecord::Schema.define(version: 20141007023353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,9 @@ ActiveRecord::Schema.define(version: 20141006024615) do
     t.string "name"
     t.text   "description"
     t.text   "image"
+    t.string "condition_variable"
+    t.string "condition_operator"
+    t.string "condition_value"
   end
 
   create_table "badges_users", id: false, force: true do |t|
@@ -46,6 +49,7 @@ ActiveRecord::Schema.define(version: 20141006024615) do
     t.integer  "level"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "admin"
   end
 
 end

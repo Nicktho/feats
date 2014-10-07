@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 		@user = User.new user_params
 		@user.xp = 0
 		@user.level = 1
+		@user.admin = false
 		if @user.save
 			redirect_to root_path
 		else 

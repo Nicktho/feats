@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body>	
 	<nav class="top-nav">
 		<span id="top-nav-logo"><%= link_to 'feats', root_path %></span>
 		<ul class="top-nav-ul dashboard-top">
@@ -15,12 +15,12 @@
 				<li class="top-nav-item"><%= link_to 'Login', login_path %></li>
 			<% end %>
 			<% if @current_user %>
-			<li class="top-nav-item"><%= link_to 'Dashboard', feats_path %></li>
+			<li class="top-nav-item"><%= link_to @current_user.username.capitalize + "'s Dashboard", feats_path %></li>
 			<li class="top-nav-item"><%= link_to 'Logout', login_path, :method => :delete, :data => {:confirm => "Are you sure?"} %></li>
 			<% end %>
 		</ul>
 	</nav>
-	<div class="sidebar-dashboard">
+	<div class="sidebar-dashboard" id="startpage">
 		<div class="sidebar-profile">
 			<div class="profile-picture">
 				
@@ -50,21 +50,36 @@
 		</div>
 		<div class="sidebar-menu">
 			<ul class="sidebar-menu-ul">
-				<li class="sidebar-menu-item sidebar-selected">
+				<li class="sidebar-menu-item <%= 'sidebar-selected' if current_page?(:action => 'index') %>">
+					<% if current_page?(:action => 'index') %>
+						<%= image_tag 'dashboard-logo-selected.svg', class: 'sidebar-logo' %>
+					<% else %>
+						<%= image_tag 'dashboard-logo.svg', class: 'sidebar-logo' %>
+					<% end %>
 					<%= link_to 'DASHBOARD', feats_path %>
 				</li>
 				<li class="sidebar-menu-item">
+					<%= image_tag 'profile-logo.svg', class: 'sidebar-logo' %>
 					<%= link_to 'PROFILE', feats_path %>
 				</li>
-				<li class="sidebar-menu-item">
+				<li class="sidebar-menu-item <%= 'sidebar-selected' if current_page?(:action => 'show_completed') %>">
+					<% if current_page?(:action => 'show_completed') %>
+						<%= image_tag 'completed-logo-selected.svg', class: 'sidebar-logo' %>
+					<% else %>
+						<%= image_tag 'completed-logo.svg', class: 'sidebar-logo' %>
+					<% end %>
 					<%= link_to 'COMPLETED', show_completed_feats_path %>
 				</li>
 				<li class="sidebar-menu-item">
+					<%= image_tag 'badges-logo.svg', class: 'sidebar-logo' %>
 					<%= link_to 'BADGES', feats_path %>
 				</li>
-				<li class="sidebar-menu-item"></li>
+				<li class="sidebar-menu-item">
+						<%= link_to 'ADMIN PANEL', admins_path if is_admin? %>
+				</li>
 				<li class="sidebar-menu-item"></li>
 				<li class="sidebar-menu-item sidebar-settings">
+					<%= image_tag 'settings-logo.svg', class: 'sidebar-logo' %>
 					<%= link_to 'SETTINGS', feats_path %>
 				</li>
 			</ul>

@@ -12,6 +12,7 @@
 #  level           :integer
 #  created_at      :datetime
 #  updated_at      :datetime
+#  admin           :boolean
 #
 
 class User < ActiveRecord::Base
