@@ -28,6 +28,7 @@ gem 'spring',        group: :development
 
 gem 'bcrypt'
 gem 'haml'
+gem 'foundation-rails'
 
 
 group :development do
