@@ -1,11 +1,12 @@
 .dashboard-container {
 	width: 100%;
+	background: #EEEEEE;
 // /*	height: 100vh;*/
 }
 
 #sidebar {
 	background: #1B272E;
-	height: 100vh;
+
 	padding: 0;
 }
 
@@ -44,9 +45,83 @@
 }
 
 .side-bar-custom {
+	background: #1B272E;
 	margin: 0;
 }
 
+.side-bar-custom li {
+
+}
+
+.side-bar-nav .columns {
+	padding: 0;
+}
+
+.side-bar-logo {
+	float: left;
+	display: inline-block;
+}
+
+#feats-number {
+	font-size: 6em;
+	margin: 0;
+	font-weight: bold;
+}
+
+#feats-number span {
+	font-size: 2em;
+	color: #3FC0FF;
+
+}
+
+#feats-number-completed {
+	font-size: 5em;
+	margin: 0;
+	font-weight: bold;
+	padding-bottom: .5em;
+}
+
+#feats-number-completed span {
+	font-size: 2em;
+	color: #3FC0FF;
+
+}
 
 
+.dashboard-main {
+	background: #EEEEEE;
+	color: #848484;
+}
 
+.dashboard-main * {
+	color: #848484;
+}
+
+
+.tasks-container {
+	background: white;
+	max-height: 300px;
+	overflow: scroll;
+}
+
+.badge-icon {
+	display: inline-block;
+	padding-bottom: 1em;
+}
+
+.task-row {
+	padding-top: 1em;
+}
+.task-row p {
+	font-size: 200%;
+}
+
+.tasks-row {
+	background: white;
+	padding-top: 2em;
+	padding-bottom: 1em;
+}
+
+.ago {
+	color: red;
+}

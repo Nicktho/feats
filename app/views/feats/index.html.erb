@@ -1,33 +1,37 @@
-<div class="dashboard-top-view">
-	<div class="total-feats">
+<div class="row">
+	<div class="small-12 columns">
+		<!-- 9 feats -->
 		<h1 id="feats-number">
-			<span id="total-number-of-feats"><%= @uncomplete.count %></span> feats
+			<span><%= @uncomplete.count %></span> feats
 		</h1>
 	</div>
-	<div class="badges">
+</div>
+<div class="row">
+	<div class="large-9 medium-9 small-6 columns">
+		<!-- Badges -->
 		<% @current_user.badges.each do |b| %>
 			<div class="badge-icon">
 				<%= link_to (image_tag b.image), dashboard_badges_path %>
 			</div>
 		<% end  %>
 	</div>
-	<div class="add-feat-button">
-		<%= button_to '+ ADD FEAT', new_feat_path, method: :get %>
+	<div class="large-3 medium-3 small-6 text-right columns">
+		<!-- Add Feat -->
+		<%= button_to '+ ADD FEAT', new_feat_path, method: :get, class: 'button' %>
 	</div>
 </div>
-<div class="dashboard-bottom-view">
-	<div class="feats-scrollbox">
-		<div class="feats-scrollbox-content">
-			<ul class="feats-list">
-				<% @uncomplete.each do |f| %>
-					<li class="feats-list-item">
-						<%= link_to(complete_feat_path(f), class: "svg") do  %>
-							<object class="tick" type="image/svg+xml" data="/assets/tick.svg"></object>
-						<% end %>
-						<%= f.description %> <span class="feats-due-time <%= "ago" if f.deadline && f.deadline < Time.now  %> "><%= time_ago_in_words f.deadline if f.deadline %> <%= "ago" if f.deadline && f.deadline < Time.now  %></span></li>
-				<% end %>
+<div class="row tasks-row">
+	<div class="small-11 columns small-centered tasks-container">
+		<!-- Tasks -->	
 
-			</ul>
-		</div>
+		<% @uncomplete.each do |f| %>
+			<div class="row task-row">
+				<div class="small-2 columns">
+					<%= link_to (image_tag 'tick.svg'), complete_feat_path(f) %>
+				</div>
+				<div class="small-5 large-6 columns"><p><%= f.description %></p></div>
+				<div class="small-5 large-4 columns text-right"><p><span class="<%= "ago" if f.deadline && f.deadline < Time.now  %> "><%= time_ago_in_words f.deadline if f.deadline %> <%= "ago" if f.deadline && f.deadline < Time.now  %></span></p></div>
+			</div>
+		<% end %>
 	</div>
 </div>

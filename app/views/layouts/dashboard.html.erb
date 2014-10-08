@@ -19,7 +19,7 @@
     <div class="dashboard-row">
       <div class="dashboard-container">
         <!-- Sidebar -->
-        <div class="medium-4 columns sidebar" id="sidebar">
+        <div class="medium-3 columns sidebar" id="sidebar">
           <!-- Profile Section -->
           <div class="row profile">
             <div class="small-12 columns text-centered">
@@ -54,24 +54,29 @@
           </div>
           <!-- Nav section -->
           <div class="row side-bar-nav">
+          <div class="large-12 columns">
             <ul class="side-nav text-right side-nav-custom">
-              <li class=<%= 'active' if current_page?(:controller => 'feats', :action => 'index') %>><%= link_to 'DASHBOARD', feats_path %></li>
+              <li class=<%= 'active' if current_page?(:controller => 'feats', :action => 'index') %>>
+                <%= link_to 'DASHBOARD', feats_path %>
+              </li>
               <li><%= link_to 'PROFILE', feats_path %></li>
-              <li class=<%= 'active' if current_page?(:controller => 'feats', :action => 'show_completed') %>><%= link_to 'COMPLETED', show_completed_feats_path %></li>
+              <li class=<%= 'active' if current_page?(:controller => 'feats', :action => 'show_completed') %>>
+              <%= link_to 'COMPLETED', show_completed_feats_path %></li>
               <li class=<%= 'active' if current_page?(:controller => 'dashboard', :action => 'badges') %>><%= link_to 'BADGES', dashboard_badges_path %></li>
-              <li></li>
+              <li><%= link_to 'ADMIN PANEL', admins_path if is_admin? %></li>
+              <li><%= link_to 'SETTINGS', feats_path %></li>
             </ul>
+          </div>
           </div>
 
           
         </div>
         <!-- Main Content -->
-        <div class="medium-8 columns dashboard-man">
+        <div class="medium-9 columns dashboard-main">
           <%= yield %>
         </div>
       </div>
     </div>
-
 
 
 
