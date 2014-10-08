@@ -21,34 +21,36 @@
         <!-- Sidebar -->
         <div class="medium-4 columns sidebar" id="sidebar">
           <!-- Profile Section -->
-          <div class="row profile text-centered">
-            <div class="row profile">
-              <div class="profile-picture">             </div>
-            </div>
-            <div class="row profile">
-              <div class="row white text-center" id="user-specs">
-                <div class="small-4 columns">
-                  <h4 class="white"><%= @current_user.feats.where(completed: false).count  %></h4>
-                  <p>feats</p>
-                </div>
-                <div class="small-4 columns">
-                 <h4 class="white"><%= @current_user.feats.where(completed: true).count %></h4>
-                  <p>competed</p>
-                </div>
-                <div class="small-4 columns">
-                  <h4 class="white"><%= @current_user.badges.count %></h4>
-                  <p>badges</p>
+          <div class="row profile">
+            <div class="small-12 columns text-centered">
+              <div class="row profile">
+                <div class="profile-picture">             </div>
+              </div>
+              <div class="row profile">
+                <div class="row white text-center" id="user-specs">
+                  <div class="small-4 columns">
+                    <h4 class="white"><%= @current_user.feats.where(completed: false).count  %></h4>
+                    <p>feats</p>
+                  </div>
+                  <div class="small-4 columns">
+                   <h4 class="white"><%= @current_user.feats.where(completed: true).count %></h4>
+                    <p>competed</p>
+                  </div>
+                  <div class="small-4 columns">
+                    <h4 class="white"><%= @current_user.badges.count %></h4>
+                    <p>badges</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="row profile progress-meter">
-              <div class="progress small-10 small-centered columns round ">
-                <span class="meter" style="width: <%= @current_user.xp_to_percent %> "></span>
+              <div class="row profile progress-meter">
+                <div class="progress small-10 small-centered columns round ">
+                  <span class="meter" style="width: <%= @current_user.xp_to_percent %> "></span>
+                </div>
               </div>
+              <div class="row profile">
+                <div class="small-12 small-centered columns"><p class="text-center"><strong>LVL <%= @current_user.level %></strong></p></div>
+              </div>           
             </div>
-            <div class="row profile">
-              <div class="small-12 small-centered columns"><p class="text-center"><strong>LVL <%= @current_user.level %></strong></p></div>
-            </div>           
           </div>
           <!-- Nav section -->
           <div class="row side-bar-nav">
