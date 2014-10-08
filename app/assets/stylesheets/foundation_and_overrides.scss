@@ -1128,7 +1128,7 @@ $column-gutter: rem-calc(30px);
 // $include-html-nav-classes: $include-html-classes;
 
 // We use this to control padding.
-$side-nav-padding: rem-calc(14 0);
+$side-nav-padding: rem-calc(0);
 
 // We use these to control list styles.
 // $side-nav-list-type: none;
@@ -1137,13 +1137,13 @@ $side-nav-list-margin: 0;
 
 // We use these to control link styles.
 $side-nav-link-color: #EEEEEE;
-// $side-nav-link-color-active: scale-color($side-nav-link-color, $lightness: 30%);
+$side-nav-link-color-active: #1B272E;
 $side-nav-link-color-hover: #1B272E;
 $side-nav-link-bg-hover: #EEEEEE;
 // $side-nav-link-margin: 0;
-// $side-nav-link-padding: rem-calc(7 14);
+$side-nav-link-padding: rem-calc(14 14);
 // $side-nav-font-size: rem-calc(14);
-// $side-nav-font-weight: $font-weight-normal;
+$side-nav-font-weight: bold;
 // $side-nav-font-weight-active: $side-nav-font-weight;
 // $side-nav-font-family: $body-font-family;
 // $side-nav-font-family-active: $side-nav-font-family;
