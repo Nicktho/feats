@@ -29,7 +29,7 @@ gem 'spring',        group: :development
 gem 'bcrypt'
 gem 'haml'
 gem 'foundation-rails'
-
+gem 'font-awesome-sass', '~> 4.2.0'
 
 group :development do
   gem 'pry-rails'

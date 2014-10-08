@@ -1,34 +1,68 @@
-<div class="top-div">
-	<section class='top-section'>
-		<h1 id="feats-title">feats</h1>
-		<h2>Celebrate completing everything, even the small things.</h2>
-	</section>
-</div>
-
-<div class="middle-div">
-<section class="middle-section">
-		<h3>How It Works</h3>
-		<div class="home-box">
-			<h4>Add a feat</h4>
-			<p>Add a 'feat', a small description of a task you have to do.</p>
+<section class='frontpage-hero'>
+	<div class="row vert-align">
+		<div class="row">
+			<div class="small-12 columns">
+					<h1 class="text-center white" id="main-logo">feats</h1>
+			</div>
 		</div>
-		<div class="home-box">
-			<h4>Complete the feat</h4>
+		<div class="row">
+			<div class="small-12 columns">
+				<h1 class="text-center white sub-heading">Celebrate completing everything, even the small things.</h1>
+			</div>
+		</div>
+	</div> 
+</section>
+
+<section class="middle-section">
+	<section class="middle-title">
+		<div class="row">
+			<div class="small-12 columns">
+				<h2 class="text-center">Every task you complete deserves a celebration.</h2>
+				<h4 class="subheader text-center">Ditch 'tasks', embrace feats.</h4>
+			</div>
+		</div>
+	</section>
+	<div class="row text-center">
+		<div class="large-4 medium-4 columns">
+			<%= icon('plus') %>
+			<h3>Add a feat</h3>
+			<p>Add a 'feat', a small description of a task you have to do.</p>
+
+		</div>
+		<div class="large-4 medium-4 columns">
+		<%= icon('check-square') %>
+			<h3>Complete the feat</h3>
 			<p>Click the checkmark next to the feat you've completed.</p>
 		</div>
-		<div class="home-box">
-			<h4>Get rewarded</h4>
+		<div class="large-4 medium-4 columns">
+			<%= icon('trophy') %>
+			<h3>Get rewarded</h3>
 			<p>Enjoy rewards such as badges, new theme options and tracking of everything you've accomplished!</p>
 		</div>
-	</section>
-</div>
+	</div>
+</section>
 
-<div class="bottom-div">
-	<section class="get-started">
-		<h3>Get Started Now!</h3>
-		<p>
+<section class="get-started text-center">
+	<div class="row">
+		<div class="large-12 columns">
+			<h2 class="">Get Started Now</h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-6 large-centered columns">
+			<p class="">
 			Create an account and start completing feats!
-		</p>
-		<%= button_to 'Create an Account', new_user_path, :method => :get , :form_class => "newuser" %>
-	</section>
-</div>
+			</p>
+		<%= button_to 'Create an Account', new_user_path, :method => :get , :form_class => "newuser", class:'button' %>
+		</div>
+	</div>
+</section>
+
+<footer>
+	<div class="row">
+		<div class="small-3 columns">
+		<p>Nick Tho</p>
+		<p>WDI Project 1</p>
+		</div>
+	</div>
+</footer>
