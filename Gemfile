@@ -31,6 +31,8 @@ gem 'bcrypt'
 gem 'haml'
 gem 'foundation-rails'
 gem 'font-awesome-sass', '~> 4.2.0'
+gem 'paperclip'
+gem 'aws-sdk'
 
 group :development do
   gem 'pry-rails'

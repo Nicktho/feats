@@ -19,5 +19,13 @@ module Feats
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => 'featsmedia',
+      :access_key_id => 'AKIAJ3VA5XDPIUHARGCQ',
+      :secret_access_key => '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'
+    }
+  }
   end
 end

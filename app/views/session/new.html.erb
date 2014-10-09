@@ -2,6 +2,12 @@
 	<div class="row vert-align">
 		<div class="small-9 large-6 medium-6	 small-centered columns">
 		<h2 class='white'>Login to your dashboard</h2>
+		<% if @error %>
+			<div data-alert class="alert-box alert">
+		  <%= @error %>
+		  <a href="#" class="close">&times;</a>
+		</div>
+		<% end %>
 		<div class="panel">
 			<%= form_tag '/login' do%>
 				<div class="row">

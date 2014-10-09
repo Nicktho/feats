@@ -21,6 +21,14 @@ class User < ActiveRecord::Base
 	has_many :feats
 	has_and_belongs_to_many :badges
 
+	has_attached_file :avatar, styles: {
+    thumb: '100x100>',
+    square: '200x200#',
+    medium: '300x300>'
+  }
+  
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
 	validates :username, presence: true, uniqueness: true, length: {minimum: 3}
 	validates :email, presence:true
 

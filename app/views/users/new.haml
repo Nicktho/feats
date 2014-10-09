@@ -3,9 +3,10 @@
 		%h1.white Register
 		= form_for @user do |f|
 			- if @user.errors.any?
-				%ul.error_msgs
-					- @user.errors.full_messages.each do |msg|
-						%li= msg
+				- @user.errors.full_messages.each do |msg|
+					.alert-box.alert{"data-alert" => ""}
+						= msg
+						%a.close &times;
 
 			%div.input-group
 				= f.label :username, class: 'white'

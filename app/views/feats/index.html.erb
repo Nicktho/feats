@@ -1,3 +1,4 @@
+
 <div class="row">
 	<div class="small-12 columns">
 		<!-- 9 feats -->
@@ -20,10 +21,15 @@
 		<%= button_to '+ ADD FEAT', new_feat_path, method: :get, class: 'button' %>
 	</div>
 </div>
+<% if @uncomplete.empty? %>
+	<div data-alert class="alert-box warning">
+ 		You haven't created any feats, why don't you try adding one?
+			<a href="#" class="close">&times;</a>
+	</div>
+<% end %>
 <div class="row tasks-row">
 	<div class="small-11 columns small-centered tasks-container">
 		<!-- Tasks -->	
-
 		<% @uncomplete.each do |f| %>
 			<div class="row task-row">
 				<div class="small-2 columns">

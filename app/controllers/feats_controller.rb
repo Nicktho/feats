@@ -54,11 +54,14 @@ class FeatsController < ApplicationController
 
 	def check_badges
 		all_badges = Badge.all 
+		@badge_msg = []
 		all_badges.each do |b|
 			unless @current_user.badges.include? b
-				@current_user.badges << b if b.conditions_met?(@current_user) 
+				@current_user.badges << b and @badge_msg << "Congrats! You got the '#{b.name}' badge!" if b.conditions_met?(@current_user) 
+				
 			end 
 		end 
+		@badge_msg
 	end 
 
 end 

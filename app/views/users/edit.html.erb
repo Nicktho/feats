@@ -1,14 +1,19 @@
 <h1 class="text-center">Settings</h1>
 <%= form_for @current_user do |f| %>
 	<div class="row">
-		<columns class="columns large-12">
-			<div class="profile-picture"></div>
-		</columns>
+		<div class="columns large-12">
+			<% if @current_user.avatar.exists? %>
+                  <div class="profile-avatar text-center">
+                  <%= image_tag @current_user.avatar.url(:square) %>             </div>
+                <% else %>
+                  <div class="profile-picture"></div>
+                <% end %>
+		</div>
 	</div>
 	<div class="row">
 		<div class="columns large-8">
-			<%= f.label :image, "Profile Picture" %>
-			<%= f.url_field :image %>
+			<%= f.label :avatar, "Profile Picture" %>
+			<%= f.file_field :avatar %>
 		</div>
 	</div>
 	<div class="row">
@@ -24,8 +29,8 @@
 		</div>
 	</div>
 	<div class="row">
-		<columns class="large-8 columns">
+		<div class="large-8 columns">
 			<%= f.submit class: 'button expand' %>
-		</columns>
+		</div>
 	</div>
 <% end %>

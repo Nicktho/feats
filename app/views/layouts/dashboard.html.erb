@@ -25,7 +25,12 @@
           <div class="row profile">
             <div class="small-12 columns text-centered">
               <div class="row theme-background-<%= @current_user.theme_option %>">
-                <div class="profile-picture">             </div>
+                <% if @current_user.avatar.exists? %>
+                  <div class="profile-avatar text-center">
+                  <%= image_tag @current_user.avatar.url(:square) %>             </div>
+                <% else %>
+                  <div class="profile-picture"></div>
+                <% end %>
               </div>
               <div class="row theme-background-<%= @current_user.theme_option %>">
                 <div class="row white text-center" id="user-specs">
@@ -74,6 +79,18 @@
         </div>
         <!-- Main Content -->
         <div class="medium-9 columns dashboard-main">
+          <% unless @badge_msg.empty? %>
+            <div class="row top-msg">
+              <div class="columns small-12">
+                <% @badge_msg.each do |b| %>
+                  <div data-alert class="alert-box">
+                    <%= b %>
+                    <a href="#" class="close">&times;</a>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
           <%= yield %>
         </div>
       </div>
