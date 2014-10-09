@@ -1,6 +1,7 @@
 .frontpage-hero {
 	height: 600px;
-	background-image: url('/assets/login-background.png');
+/*	background-image: url('/assets/login-background.png');*/
+  background: #3FC0FF;
 	background-size: cover;
 	margin: 0;
 	padding: 20px;
@@ -55,5 +56,10 @@ footer {
 
 #pagebody {
 	background: #1B272E;
+
+}
+
+.tick-front { 
+	width: 500px;
 
 }
