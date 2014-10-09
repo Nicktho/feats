@@ -1,38 +1,40 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Admin Panel</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-	<nav class="top-nav">
-		<span id="top-nav-logo"><%= link_to 'feats', root_path %></span>
-		<ul class="top-nav-ul">
-			<li class="top-nav-item"><%= link_to 'Home', root_path %></li>
-			<% unless @current_user %>
-				<li class="top-nav-item"><%= link_to 'Login', login_path %></li>
-			<% end %>
-			<% if @current_user %>
-			<li class="top-nav-item"><%= link_to @current_user.username.capitalize + "'s Dashboard", feats_path %></li>
-			<li class="top-nav-item"><%= link_to 'Logout', login_path, :method => :delete, :data => {:confirm => "Are you sure?"} %></li>
-			<% end %>
-		</ul>
-	</nav>
-	<main>
-		<div class="nav-content">
-			<%= link_to 'List Badges', badges_path %>
-			<%= link_to 'Add Badge', new_badge_path %>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		</div>
-		<div class="main-content">
-					<%= yield %>
-		</div>
+    <title><%= content_for?(:title) ? yield(:title) : "Feats" %></title>
 
-	</main>
-	<footer>
-		&copy; Nicholas Matenaar | 2014 | WDI PROJECT 1 | Australia
-	</footer>
-</body>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <!-- Main Navigation -->
+    <%= render 'layouts/navigation' %>
+    
+    <div class="admin-area">
+      <div class="row">
+        <h1 class="admin-title">Admin Area</h1>
+        <!-- Side Bar -->
+        <div class="columns large-4 admin-side">
+          <ul class="side-nav">
+            <li><%= link_to 'List Badges', badges_path %></li>
+            <li><%= link_to 'Add Badge', new_badge_path %></li>
+          </ul>
+        </div>
+        <!-- Content -->
+        <div class="columns large-8">
+          <%= yield %>
+        </div>
+      </div>
+     </div>    
+    </div>
+
+     
+
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>

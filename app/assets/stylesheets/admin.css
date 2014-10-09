@@ -1,23 +1,15 @@
-.nav-content {
-	background: white;
-	color: black;
+.admin-area {
+
+	height: 100vh;
 }
 
-.badge-item-admin {
-	display: inline-block;
-	text-align: center;
-	padding: 1em;
+.admin-side {
 	background: black;
-	margin: 1em;
+	padding-top: 1em;
+	padding-bottom: 1em;
 }
 
-.badge-item-admin a {
-	text-decoration: none;
-	color: white;
+.admin-title {
+	padding: 1em;
 }
 
-.badges-admin {
-	background: white;
-	margin: 1em;
-	
-}

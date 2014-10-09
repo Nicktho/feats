@@ -1,7 +1,6 @@
 .dashboard-container {
 	width: 100%;
 	background: #EEEEEE;
-// /*	height: 100vh;*/
 }
 
 #sidebar {
@@ -23,7 +22,7 @@
 }
 
 .profile {
-	background-color: #3FC0FF;
+
 
 }
 
@@ -100,7 +99,7 @@
 
 .tasks-container {
 	background: white;
-	max-height: 300px;
+	max-height: 260px;
 	overflow: scroll;
 }
 
@@ -124,4 +123,39 @@
 
 .ago {
 	color: red;
+}
+
+
+#sidebar {
+	min-height: 100vh;
+}
+
+.theme-background-blue {
+	background: #3FC0FF;	
+}
+
+.theme-background-gold {
+	background: #FFB63F;
+}
+
+.theme-background-red {
+	background: #FF3F3F;
+}
+
+.theme-color-blue {
+	color: #3FC0FF;
+}
+
+.theme-color-gold {
+	color: #FFB63F;
+}
+
+.theme-color-red {
+ color: #FF3F3F;
+}
+
+.side-bar-nav i {
+	display: inline-block;
+	font-size: 180%;
+	float: left;
 }

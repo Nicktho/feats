@@ -1,0 +1,31 @@
+<h1 class="text-center">Settings</h1>
+<%= form_for @current_user do |f| %>
+	<div class="row">
+		<columns class="columns large-12">
+			<div class="profile-picture"></div>
+		</columns>
+	</div>
+	<div class="row">
+		<div class="columns large-8">
+			<%= f.label :image, "Profile Picture" %>
+			<%= f.url_field :image %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="columns large-8">
+			<%= f.label :email %>
+			<%= f.text_field :email %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="columns large-8">
+			<%= f.label :theme_option, "Theme" %>
+			<%= f.select :theme_option, options_for_select(@themes)%>
+		</div>
+	</div>
+	<div class="row">
+		<columns class="large-8 columns">
+			<%= f.submit class: 'button expand' %>
+		</columns>
+	</div>
+<% end %>

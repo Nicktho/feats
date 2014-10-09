@@ -18,16 +18,21 @@ class Badge < ActiveRecord::Base
 		user_value = user.send(self.condition_variable)
 		con_val = self.condition_value
 		if user_value.is_a? Integer 
-			con_val = con_val.to_i
-
-		end 
+			test_user = user_value
+			test_con = con_val.to_i
+		elsif user_value.is_a? String 
+			test_user = user_value.upcase
+			test_con = con_val.upcase
+		end
 		case self.condition_operator
 		when '='
-			user_value == con_val
+			test_user == test_con
 		when '>'
-			user_value > con_val
+			test_user > test_con
 		when '<'
-			user_value < con_val
+			test_user < test_con	
+		when "contains" 
+			test_user.include? test_con
 		end 
 	end 
 	

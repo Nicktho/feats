@@ -20,13 +20,14 @@
       <div class="dashboard-container">
         <!-- Sidebar -->
         <div class="medium-3 columns sidebar" id="sidebar">
+        
           <!-- Profile Section -->
           <div class="row profile">
             <div class="small-12 columns text-centered">
-              <div class="row profile">
+              <div class="row theme-background-<%= @current_user.theme_option %>">
                 <div class="profile-picture">             </div>
               </div>
-              <div class="row profile">
+              <div class="row theme-background-<%= @current_user.theme_option %>">
                 <div class="row white text-center" id="user-specs">
                   <div class="small-4 columns">
                     <h4 class="white"><%= @current_user.feats.where(completed: false).count  %></h4>
@@ -42,12 +43,12 @@
                   </div>
                 </div>
               </div>
-              <div class="row profile progress-meter">
+              <div class="row theme-background-<%= @current_user.theme_option %> progress-meter">
                 <div class="progress small-10 small-centered columns round ">
                   <span class="meter" style="width: <%= @current_user.xp_to_percent %> "></span>
                 </div>
               </div>
-              <div class="row profile">
+              <div class="row theme-background-<%= @current_user.theme_option %>">
                 <div class="small-12 small-centered columns"><p class="text-center"><strong>LVL <%= @current_user.level %></strong></p></div>
               </div>           
             </div>
@@ -57,14 +58,14 @@
           <div class="large-12 columns">
             <ul class="side-nav text-right side-nav-custom">
               <li class=<%= 'active' if current_page?(:controller => 'feats', :action => 'index') %>>
-                <%= link_to 'DASHBOARD', feats_path %>
+                <%= link_to icon('tachometer') + "DASHBOARD", feats_path %><%=  %>
               </li>
-              <li><%= link_to 'PROFILE', feats_path %></li>
               <li class=<%= 'active' if current_page?(:controller => 'feats', :action => 'show_completed') %>>
-              <%= link_to 'COMPLETED', show_completed_feats_path %></li>
-              <li class=<%= 'active' if current_page?(:controller => 'dashboard', :action => 'badges') %>><%= link_to 'BADGES', dashboard_badges_path %></li>
-              <li><%= link_to 'ADMIN PANEL', admins_path if is_admin? %></li>
-              <li><%= link_to 'SETTINGS', feats_path %></li>
+              <%= link_to icon('check-square') + 'COMPLETED', show_completed_feats_path %></li>
+              <li class=<%= 'active' if current_page?(:controller => 'dashboard', :action => 'badges') %>><%= link_to icon('trophy') +  'BADGES', dashboard_badges_path %></li>
+              <li><%= link_to icon('bolt') + 'ADMIN PANEL', admins_path if is_admin? %></li>
+
+              <li><%= link_to icon('cog') + 'SETTINGS', edit_user_path(@current_user)%></li>
             </ul>
           </div>
           </div>

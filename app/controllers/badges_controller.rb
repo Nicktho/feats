@@ -13,6 +13,7 @@ class BadgesController < ApplicationController
 			"=",
 			">",
 			"<",
+			"contains",
 		]
 	end
 

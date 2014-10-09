@@ -1,35 +1,21 @@
-<!-- / %section.login-form
-/ 	= form_tag '/login', :class => "login-form-class" do
 
-/ 		%h1
-/ 			LOGIN
-
-/ 		%div.input-group
-/ 			= text_field_tag :username, nil, autofocus: true, placeholder: "Username"
-
-/ 		%div.input-group
-/ 			= password_field_tag :password, nil, placeholder: "Password"
-
-/ 		%div.input-group
-/ 			= submit_tag 'Login'	
-
-/ 		- if @error 
-/ 			%div.error-msg
-/ 				= @error -->
-<div class="row vert-align">
-	<div class="small-9 large-6 medium-6	 small-centered columns">
-		<%= form_tag '/login' do%>
-			<div class="row">
-				<div class="large-12 columns">
-					<%= text_field_tag :username, nil, autofocus: true, placeholder: "Username" %>
+	<div class="row vert-align">
+		<div class="small-9 large-6 medium-6	 small-centered columns">
+		<h2 class='white'>Login to your dashboard</h2>
+		<div class="panel">
+			<%= form_tag '/login' do%>
+				<div class="row">
+					<div class="large-12 columns">
+						<%= text_field_tag :username, nil, autofocus: true, placeholder: "Username" %>
+					</div>
+					<div class="large-12 columns">
+						<%= password_field_tag :password, nil, placeholder: "Password" %>
+					</div>
+					<div class="large-12 columns">
+						<%= button_tag 'Login', class:'button expand' %>
+					</div>
 				</div>
-				<div class="large-12 columns">
-					<%= password_field_tag :password, nil, placeholder: "Password" %>
-				</div>
-				<div class="large-12 columns">
-					<%= button_tag 'Login', class:'button expand' %>
-				</div>
-			</div>
-		<% end %>
+			<% end %>
+		</div>
 	</div>
 </div>

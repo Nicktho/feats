@@ -1,32 +1,16 @@
-.badges-table {
-	margin: 1em;
-	text-align: center;
+#badges-table table {
 	width: 100%;
+	margin-top: 1em	;
 }
 
-.badges-table tr {
-	margin: 1em;
-}
-
-.badges-table th {
-	padding: 1em;
-}
-
-.badges-table td {
-	padding: 1em;
-	margin: 1em;
-	background: white;
-	border-top: 3px solid black;
-	border-bottom: 3px solid black;
-}
-
-.total-badges {
-	color: #3FC0FF;
-	font-size: 200%;
-}
-
-h2.badges-page {
+.center {
 	text-align: center;
-	margin: 2em;
+}
 
+.badges-page span {
+	color: #3FC0FF;
+}
+
+h1.badges-page {
+	padding: 1em;
 }

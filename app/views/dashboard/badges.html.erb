@@ -1,16 +1,19 @@
-<h1 class="badges-page">Your Badges</h1>
-<h2 class="badges-page">There's currently <span class="total-badges"><%= @totalbadges %></span> badges in out system. You have <span class="total-badges"><%= @current_user.badges.count %></span>.</h2>
-<table class="badges-table">
-	<tr>
-		<th>Name</th>
-		<th>Badge</th>
-		<th>Description</th>
-	</tr>
-	<% @badges.each do |b| %>
+<h1 class="badges-page text-center">Your Badges</h1>
+<h2 class="badges-page text-center">You have <span class="total-badges"><%= @current_user.badges.count %></span> out of <%= @totalbadges %> available badges.</h2>
+<div class="columns large-12 text-center" id="badges-table">
+	<table>
 		<tr>
-			<td><%= b.name %></td>
-			<td><%= image_tag b.image %></td>
-			<td><%= b.description %></td>
+			<th>Name</th>
+			<th>Badge</th>
+			<th>Description</th>
 		</tr>
-	<% end %>
-</table>
+		<% @badges.each do |b| %>
+			<tr>
+				<td><%= b.name %></td>
+				<td class="center"><%= image_tag b.image %></td>
+				<td><%= b.description %></td>
+			</tr>
+		<% end %>
+	</table>
+
+</div>
