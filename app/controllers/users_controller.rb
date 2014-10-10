@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 
 	def edit
 		redirect_to feats_path and return unless @current_user.id.to_s == params[:id] 
+		check_level
 		check_badges
 		@themes = [] 
 		@themes << "blue"
@@ -38,6 +39,10 @@ class UsersController < ApplicationController
 	def user_params
 		params.require(:user).permit(:username, :email, :password, :password_confirmation, :theme_option, :image, :avatar)
 	end 
+
+	def check_level
+		@current_user.update_level 	if logged_in?
+	end
 
 	def check_badges
 		all_badges = Badge.all 

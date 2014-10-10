@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
 	layout 'dashboard'
 
-	before_action :check_badges
+	before_action :check_badges, :check_level
 
 	def badges
 		@badges = @current_user.badges
@@ -10,6 +10,11 @@ class DashboardController < ApplicationController
 
 	def settings
 	end
+
+	def check_level
+		@current_user.update_level 	if logged_in?
+	end 
+
 
 	def check_badges
 		all_badges = Badge.all 
