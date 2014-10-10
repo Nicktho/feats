@@ -63,3 +63,8 @@ footer {
 	width: 500px;
 
 }
+
+.footer-icons i {
+	font-size: 250%;
+	padding-right: 5px;
+}
