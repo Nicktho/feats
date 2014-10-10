@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new user_params
 		@user.xp = 0
-		@user.level = 1
+		@user.level = 0
 		@user.admin = false
 		@user.theme_option = "blue"
 		if @user.save
