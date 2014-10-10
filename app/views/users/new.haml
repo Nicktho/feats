@@ -1,30 +1,31 @@
 .row.vert-align
 	.columns.large-6.small-centered.medium-7
 		%h1.white Register
-		= form_for @user do |f|
-			- if @user.errors.any?
-				- @user.errors.full_messages.each do |msg|
-					.alert-box.alert{"data-alert" => ""}
-						= msg
-						%a.close &times;
+		.panel
+			= form_for @user do |f|
+				- if @user.errors.any?
+					- @user.errors.full_messages.each do |msg|
+						.alert-box.alert{"data-alert" => ""}
+							= msg
+							%a.close &times;
 
-			%div.input-group
-				= f.label :username, class: 'white'
-				= f.text_field :username, autofocus: true 
+				%div.input-group
+					= f.label :username
+					= f.text_field :username, autofocus: true 
 
-			%div.input-group
-				= f.label :email, class: 'white'
-				= f.text_field :email
-			
-			%div.input-group
-				= f.label :password, class: 'white'
-				= f.password_field :password
+				%div.input-group
+					= f.label :email
+					= f.text_field :email
+				
+				%div.input-group
+					= f.label :password
+					= f.password_field :password
 
-			%div.input-group
-				= f.label :password_confirmation, class: 'white'
-				= f.password_field :password_confirmation
+				%div.input-group
+					= f.label :password_confirmation
+					= f.password_field :password_confirmation
 
-			%div.input-group	
-				%label
-				= f.submit class: 'button expand'
+				%div.input-group	
+					%label
+					= f.submit class: 'button expand'
 

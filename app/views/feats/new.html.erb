@@ -1,25 +1,32 @@
-<h1>Add a feat</h1>
+<h1 class="text-center add-text">Add a feat</h1>
 
-<% if @feat.errors.any? %>
-	<% @feat.errors.full_messages.each do |e| %>
-		<div data-alert class="alert-box alert">
-      <%= e %>
-    	<a href="#" class="close">&times;</a>
-		</div>
-	<% end %>
-<% end %>
+<div class="row">
+	<div class="small-9 columns small-centered">
+		<div class="panel">
+		<% if @feat.errors.any? %>
+			<% @feat.errors.full_messages.each do |e| %>
+				<div data-alert class="alert-box alert">
+		      <%= e %>
+		    	<a href="#" class="close">&times;</a>
+				</div>
+			<% end %>
+		<% end %>
 
-<%= form_for @feat do |f| %>
-	<div class="input-group">
-		<%= f.label :description %>
-		<%= f.text_field :description %>
-	</div>
-	<div class="input-group">
-		<%= f.label :deadline %>
-		<%= f.date_field :deadline %>
-	</div>
-	<div class="input-group">
-		<%= f.submit class: 'button expand'%>
+		<%= form_for @feat do |f| %>
+			<div class="input-group">
+				<%= f.label :description %>
+				<%= f.text_field :description, autofocus: true %>
+			</div>
+			<div class="input-group">
+				<%= f.label :deadline %>
+				<%= f.date_field :deadline %>
+			</div>
+			<div class="input-group">
+				<%= f.submit class: 'button expand'%>
+			</div>
+
+		<% end %>
+		
 	</div>
 
-<% end %>
+</div>
